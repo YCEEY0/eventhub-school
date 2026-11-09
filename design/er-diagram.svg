@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" font-family="DejaVu Sans, Arial, sans-serif">
+<title>ER диаграма — EventHub School v0.1</title>
+<rect width="1200" height="800" fill="#ffffff"/>
+<text x="40" y="28" font-size="16" fill="#1f2328" font-weight="bold" text-anchor="start">ER диаграма — EventHub School (v0.1, Етап 1)</text>
+<rect x="40" y="50" width="300" height="160" rx="8" fill="#fff" stroke="#57606a" stroke-width="1.5"/>
+<rect x="40" y="50" width="300" height="34" rx="8" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1"/>
+<rect x="40" y="70" width="300" height="14" rx="0" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1"/>
+<text x="52" y="73" font-size="14" fill="#fff" font-weight="bold" text-anchor="start">venues</text>
+<text x="50" y="102" font-size="11" fill="#8250df" font-weight="bold" text-anchor="start">PK</text>
+<text x="84" y="102" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">id</text>
+<text x="330" y="102" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">uuid</text>
+<rect x="41" y="109" width="298" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="50" y="126" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="84" y="126" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">name_bg</text>
+<text x="330" y="126" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<text x="50" y="150" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="84" y="150" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">name_en</text>
+<text x="330" y="150" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<rect x="41" y="157" width="298" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="50" y="174" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="84" y="174" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">capacity</text>
+<text x="330" y="174" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">int</text>
+<text x="50" y="198" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="84" y="198" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">is_active</text>
+<text x="330" y="198" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">boolean</text>
+<rect x="420" y="50" width="360" height="376" rx="8" fill="#fff" stroke="#57606a" stroke-width="1.5"/>
+<rect x="420" y="50" width="360" height="34" rx="8" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1"/>
+<rect x="420" y="70" width="360" height="14" rx="0" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1"/>
+<text x="432" y="73" font-size="14" fill="#fff" font-weight="bold" text-anchor="start">events</text>
+<text x="430" y="102" font-size="11" fill="#8250df" font-weight="bold" text-anchor="start">PK</text>
+<text x="464" y="102" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">id</text>
+<text x="770" y="102" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">uuid</text>
+<rect x="421" y="109" width="358" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="430" y="126" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="126" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">title_bg</text>
+<text x="770" y="126" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<text x="430" y="150" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="150" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">title_en</text>
+<text x="770" y="150" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<rect x="421" y="157" width="358" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="430" y="174" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="174" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">description_bg</text>
+<text x="770" y="174" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<text x="430" y="198" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="198" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">description_en</text>
+<text x="770" y="198" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<rect x="421" y="205" width="358" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="430" y="222" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="222" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">category</text>
+<text x="770" y="222" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<text x="430" y="246" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="246" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">starts_at</text>
+<text x="770" y="246" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">timestamptz</text>
+<rect x="421" y="253" width="358" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="430" y="270" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="270" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">ends_at</text>
+<text x="770" y="270" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">timestamptz</text>
+<text x="430" y="294" font-size="11" fill="#0969da" font-weight="bold" text-anchor="start">FK</text>
+<text x="464" y="294" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">venue_id</text>
+<text x="770" y="294" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">uuid</text>
+<rect x="421" y="301" width="358" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="430" y="318" font-size="11" fill="#0969da" font-weight="bold" text-anchor="start">FK</text>
+<text x="464" y="318" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">organizer_id</text>
+<text x="770" y="318" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">uuid</text>
+<text x="430" y="342" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="342" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">capacity</text>
+<text x="770" y="342" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">int</text>
+<rect x="421" y="349" width="358" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="430" y="366" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="366" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">registration_deadline</text>
+<text x="770" y="366" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">timestamptz</text>
+<text x="430" y="390" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="390" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">status</text>
+<text x="770" y="390" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<rect x="421" y="397" width="358" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="430" y="414" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="414" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">created_at</text>
+<text x="770" y="414" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">timestamptz</text>
+<rect x="860" y="50" width="300" height="184" rx="8" fill="#fff" stroke="#57606a" stroke-width="1.5"/>
+<rect x="860" y="50" width="300" height="34" rx="8" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1"/>
+<rect x="860" y="70" width="300" height="14" rx="0" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1"/>
+<text x="872" y="73" font-size="14" fill="#fff" font-weight="bold" text-anchor="start">profiles</text>
+<text x="870" y="102" font-size="11" fill="#8250df" font-weight="bold" text-anchor="start">PK</text>
+<text x="904" y="102" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">id</text>
+<text x="1150" y="102" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">uuid</text>
+<rect x="861" y="109" width="298" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="870" y="126" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="904" y="126" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">full_name</text>
+<text x="1150" y="126" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<text x="870" y="150" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="904" y="150" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">role</text>
+<text x="1150" y="150" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<rect x="861" y="157" width="298" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="870" y="174" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="904" y="174" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">class_name</text>
+<text x="1150" y="174" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<text x="870" y="198" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="904" y="198" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">preferred_lang</text>
+<text x="1150" y="198" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<rect x="861" y="205" width="298" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="870" y="222" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="904" y="222" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">created_at</text>
+<text x="1150" y="222" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">timestamptz</text>
+<rect x="420" y="480" width="360" height="208" rx="8" fill="#fff" stroke="#57606a" stroke-width="1.5"/>
+<rect x="420" y="480" width="360" height="34" rx="8" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1"/>
+<rect x="420" y="500" width="360" height="14" rx="0" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1"/>
+<text x="432" y="503" font-size="14" fill="#fff" font-weight="bold" text-anchor="start">registrations</text>
+<text x="430" y="532" font-size="11" fill="#8250df" font-weight="bold" text-anchor="start">PK</text>
+<text x="464" y="532" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">id</text>
+<text x="770" y="532" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">uuid</text>
+<rect x="421" y="539" width="358" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="430" y="556" font-size="11" fill="#0969da" font-weight="bold" text-anchor="start">FK</text>
+<text x="464" y="556" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">event_id</text>
+<text x="770" y="556" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">uuid</text>
+<text x="430" y="580" font-size="11" fill="#0969da" font-weight="bold" text-anchor="start">FK</text>
+<text x="464" y="580" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">user_id</text>
+<text x="770" y="580" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">uuid</text>
+<rect x="421" y="587" width="358" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="430" y="604" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="604" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">status</text>
+<text x="770" y="604" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<text x="430" y="628" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="628" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">registered_at</text>
+<text x="770" y="628" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">timestamptz</text>
+<rect x="421" y="635" width="358" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="430" y="652" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="464" y="652" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">cancelled_at</text>
+<text x="770" y="652" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">timestamptz</text>
+<text x="430" y="676" font-size="11" fill="#bf8700" font-weight="bold" text-anchor="start">UQ</text>
+<text x="464" y="676" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">(event_id, user_id)</text>
+<text x="770" y="676" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace"></text>
+<rect x="40" y="480" width="300" height="208" rx="8" fill="#fff" stroke="#57606a" stroke-width="1.5"/>
+<rect x="40" y="480" width="300" height="34" rx="8" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1"/>
+<rect x="40" y="500" width="300" height="14" rx="0" fill="#1f3a5f" stroke="#1f3a5f" stroke-width="1"/>
+<text x="52" y="503" font-size="14" fill="#fff" font-weight="bold" text-anchor="start">notifications</text>
+<text x="50" y="532" font-size="11" fill="#8250df" font-weight="bold" text-anchor="start">PK</text>
+<text x="84" y="532" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">id</text>
+<text x="330" y="532" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">uuid</text>
+<rect x="41" y="539" width="298" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="50" y="556" font-size="11" fill="#0969da" font-weight="bold" text-anchor="start">FK</text>
+<text x="84" y="556" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">user_id</text>
+<text x="330" y="556" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">uuid</text>
+<text x="50" y="580" font-size="11" fill="#0969da" font-weight="bold" text-anchor="start">FK</text>
+<text x="84" y="580" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">event_id</text>
+<text x="330" y="580" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">uuid, null</text>
+<rect x="41" y="587" width="298" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="50" y="604" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="84" y="604" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">type</text>
+<text x="330" y="604" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">text</text>
+<text x="50" y="628" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="84" y="628" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">params</text>
+<text x="330" y="628" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">jsonb</text>
+<rect x="41" y="635" width="298" height="24" rx="0" fill="#f6f8fa" stroke="#f6f8fa" stroke-width="1"/>
+<text x="50" y="652" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="84" y="652" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">is_read</text>
+<text x="330" y="652" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">boolean</text>
+<text x="50" y="676" font-size="11" fill="#656d76" font-weight="bold" text-anchor="start"></text>
+<text x="84" y="676" font-size="12.5" fill="#1f2328" font-weight="normal" text-anchor="start" font-family="DejaVu Sans Mono, monospace">created_at</text>
+<text x="330" y="676" font-size="11.5" fill="#656d76" font-weight="normal" text-anchor="end" font-family="DejaVu Sans Mono, monospace">timestamptz</text>
+<polyline points="340,110 420,110" fill="none" stroke="#57606a" stroke-width="1.6"/>
+<text x="346" y="104" font-size="13" fill="#0b3d91" font-weight="bold" text-anchor="start">1</text>
+<text x="404" y="104" font-size="13" fill="#0b3d91" font-weight="bold" text-anchor="start">N</text>
+<polyline points="860,150 780,150" fill="none" stroke="#57606a" stroke-width="1.6"/>
+<text x="846" y="144" font-size="13" fill="#0b3d91" font-weight="bold" text-anchor="start">1</text>
+<text x="788" y="144" font-size="13" fill="#0b3d91" font-weight="bold" text-anchor="start">N</text>
+<polyline points="600,426 600,480" fill="none" stroke="#57606a" stroke-width="1.6"/>
+<text x="608" y="442" font-size="13" fill="#0b3d91" font-weight="bold" text-anchor="start">1</text>
+<text x="608" y="472" font-size="13" fill="#0b3d91" font-weight="bold" text-anchor="start">N</text>
+<polyline points="1000,234 1000,590 780,590" fill="none" stroke="#57606a" stroke-width="1.6"/>
+<text x="1008" y="250" font-size="13" fill="#0b3d91" font-weight="bold" text-anchor="start">1</text>
+<text x="790" y="582" font-size="13" fill="#0b3d91" font-weight="bold" text-anchor="start">N</text>
+<polyline points="1100,234 1100,740 190,740 190,688" fill="none" stroke="#57606a" stroke-width="1.6"/>
+<text x="1108" y="250" font-size="13" fill="#0b3d91" font-weight="bold" text-anchor="start">1</text>
+<text x="198" y="704" font-size="13" fill="#0b3d91" font-weight="bold" text-anchor="start">N</text>
+<polyline points="420,330 190,330 190,480" fill="none" stroke="#57606a" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="404" y="324" font-size="13" fill="#0b3d91" font-weight="bold" text-anchor="start">1</text>
+<text x="198" y="472" font-size="13" fill="#0b3d91" font-weight="bold" text-anchor="start">N</text>
+<text x="40" y="772" font-size="11" fill="#656d76" font-weight="normal" text-anchor="start">PK — първичен ключ · FK — външен ключ · UQ — уникално ограничение · 1 — N — връзка едно към много · пунктир — по избор (event_id може да е празно)</text>
+</svg>
