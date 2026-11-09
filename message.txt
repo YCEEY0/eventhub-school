@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point and Rectangle</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5fa;
+            color: #333;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #00000010;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d5f9a;
+        }
+
+        p {
+            text-align: center;
+            color: #777;
+        }
+
+        .inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #d5dbe5;
+            border-radius: 6px;
+            box-sizing: border-box;
+            margin-bottom: 12px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #3d73b9;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 8px;
+        }
+
+        button:hover {
+            background: #2d5f9a;
+        }
+
+        #result {
+            display: none;
+            text-align: center;
+            padding: 12px;
+            margin-top: 18px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+            border: 1px solid #e0e6ef;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 450px) {
+            .inputs {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Point and Rectangle</h1>
+        <p>Enter the rectangle and point coordinates.</p>
+
+        <div class="inputs">
+            <div>
+                <label for="top">Top:</label>
+                <input type="number" id="top" value="50">
+
+                <label for="left">Left:</label>
+                <input type="number" id="left" value="100">
+
+                <label for="bottom">Bottom:</label>
+                <input type="number" id="bottom" value="150">
+            </div>
+
+            <div>
+                <label for="right">Right:</label>
+                <input type="number" id="right" value="300">
+
+                <label for="x">Point X:</label>
+                <input type="number" id="x" value="260">
+
+                <label for="y">Point Y:</label>
+                <input type="number" id="y" value="80">
+            </div>
+        </div>
+
+        <button onclick="showResult()">Check Point</button>
+
+        <div id="result"></div>
+
+        <canvas id="canvas" width="600" height="300"></canvas>
+    </div>
+
+    <script>
+        function pointOnRect(top, left, bottom, right, x, y) {
+            if (x > left && x < right && y > top && y < bottom) {
+                return "inside";
+            }
+
+            if (x < left || x > right || y < top || y > bottom) {
+                return "outside";
+            }
+
+            return "border";
+        }
+
+        function showResult() {
+            const top = Number(document.getElementById("top").value);
+            const left = Number(document.getElementById("left").value);
+            const bottom = Number(document.getElementById("bottom").value);
+            const right = Number(document.getElementById("right").value);
+            const x = Number(document.getElementById("x").value);
+            const y = Number(document.getElementById("y").value);
+
+            const result = document.getElementById("result");
+
+            if (top >= bottom || left >= right) {
+                result.style.display = "block";
+                result.style.background = "#fff0f0";
+                result.style.color = "#c0392b";
+                result.textContent =
+                    "Invalid rectangle: top must be less than bottom, and left must be less than right.";
+                drawRectangle();
+                return;
+            }
+
+            const position = pointOnRect(top, left, bottom, right, x, y);
+
+            result.style.display = "block";
+            result.style.background =
+                position === "inside" ? "#edf7f0" :
+                position === "border" ? "#fff4df" : "#fff0f0";
+
+            result.style.color =
+                position === "inside" ? "#287545" :
+                position === "border" ? "#946200" : "#c0392b";
+
+            result.textContent = "Point is " + position + ".";
+
+            drawRectangle();
+        }
+
+        function drawRectangle() {
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+
+            const top = Number(document.getElementById("top").value);
+            const left = Number(document.getElementById("left").value);
+            const bottom = Number(document.getElementById("bottom").value);
+            const right = Number(document.getElementById("right").value);
+            const x = Number(document.getElementById("x").value);
+            const y = Number(document.getElementById("y").value);
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (top >= bottom || left >= right) {
+                ctx.fillStyle = "#777";
+                ctx.fillText("Enter valid rectangle coordinates.", 20, 30);
+                return;
+            }
+
+            const padding = 35;
+            const scale = Math.min(
+                (canvas.width - padding * 2) / (right - left),
+                (canvas.height - padding * 2) / (bottom - top)
+            );
+
+            const rectWidth = (right - left) * scale;
+            const rectHeight = (bottom - top) * scale;
+            const startX = (canvas.width - rectWidth) / 2;
+            const startY = (canvas.height - rectHeight) / 2;
+
+            ctx.fillStyle = "#e6f0ff";
+            ctx.fillRect(startX, startY, rectWidth, rectHeight);
+
+            ctx.strokeStyle = "#3d73b9";
+            ctx.lineWidth = 2;
+            ctx.strokeRect(startX, startY, rectWidth, rectHeight);
+
+            ctx.fillStyle = "#333";
+            ctx.font = "13px Arial";
+            ctx.fillText("(" + left + ", " + top + ")", startX, startY - 10);
+            ctx.fillText("(" + right + ", " + bottom + ")",
+                startX + rectWidth - 90, startY + rectHeight + 18);
+
+            const px = startX + (x - left) * scale;
+            const py = startY + (y - top) * scale;
+            const position = pointOnRect(top, left, bottom, right, x, y);
+
+            ctx.beginPath();
+            ctx.arc(px, py, 6, 0, Math.PI * 2);
+
+            ctx.fillStyle =
+                position === "inside" ? "#219653" :
+                position === "border" ? "#e6a117" : "#d64545";
+
+            ctx.fill();
+
+            ctx.fillStyle = "#222";
+            ctx.fillText("(" + x + ", " + y + ")", px + 10, py - 10);
+        }
+
+        showResult();
+    </script>
+</body>
+</html>
