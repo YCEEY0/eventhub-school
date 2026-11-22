@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Добави събитие — EventHub School</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <strong class="logo" data-i18n="brand">EventHub School</strong>
+    <nav>
+      <a href="../index.html" data-i18n="navHome">Събития</a>
+      <a href="add-event.html" class="active" data-i18n="navAdd">Добави събитие</a>
+      <button id="languageToggle" type="button" class="lang-btn">EN</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 data-i18n="addTitle">Създай ново събитие</h1>
+    <form id="addEventForm" class="card form-card">
+      <label for="title" data-i18n="labelTitle">Заглавие на събитието</label>
+      <input type="text" id="title" required />
+
+      <label for="description" data-i18n="labelDesc">Описание</label>
+      <textarea id="description" rows="3" required></textarea>
+
+      <label for="eventDate" data-i18n="labelDate">Дата и час</label>
+      <input type="datetime-local" id="eventDate" required />
+
+      <label for="category" data-i18n="labelCategory">Категория</label>
+      <select id="category">
+        <option value="tech" data-i18n="catTech">Технологии</option>
+        <option value="culture" data-i18n="catCulture">Култура</option>
+        <option value="sport" data-i18n="catSport">Спорт</option>
+      </select>
+
+      <label for="venueSelect" data-i18n="labelVenue">Зала / Кабинет</label>
+      <select id="venueSelect" required></select>
+
+      <label for="maxParticipants" data-i18n="labelMax">Макс. участници</label>
+      <input type="number" id="maxParticipants" min="1" value="20" required />
+
+      <button type="submit" class="btn" data-i18n="submitBtn">Запази събитието</button>
+      <p id="formMessage"></p>
+    </form>
+  </main>
+
+  <script type="module" src="../js/app.js"></script>
+</body>
+</html>

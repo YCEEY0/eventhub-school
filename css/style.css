@@ -1,0 +1,50 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, sans-serif; background: #f4f6f9; color: #1e293b; line-height: 1.5; }
+
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2rem; background: #1d4ed8; color: #fff; flex-wrap: wrap; gap: 0.75rem;
+}
+.navbar nav { display: flex; align-items: center; gap: 1rem; }
+.navbar a { color: #dbeafe; text-decoration: none; font-weight: 500; }
+.navbar a.active, .navbar a:hover { color: #fff; text-decoration: underline; }
+.lang-btn {
+  background: #fff; color: #1d4ed8; border: none; padding: 0.35rem 0.75rem;
+  border-radius: 6px; font-weight: 700; cursor: pointer;
+}
+
+.container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+.hero { margin-bottom: 1.5rem; }
+.filters { display: flex; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.filters input, .filters select {
+  padding: 0.65rem; border: 1px solid #cbd5e1; border-radius: 8px; flex: 1; min-width: 200px;
+}
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; }
+.card {
+  background: #fff; padding: 1.25rem; border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-direction: column; gap: 0.5rem;
+}
+.badge {
+  align-self: flex-start; background: #e0e7ff; color: #1d4ed8;
+  font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 999px;
+}
+.waitlist-tag { color: #b45309; font-weight: 600; }
+.btn {
+  margin-top: auto; background: #1d4ed8; color: #fff; border: none;
+  padding: 0.65rem 1rem; border-radius: 8px; cursor: pointer; font-weight: 600;
+}
+.btn:hover { background: #1e40af; }
+
+.form-card { max-width: 600px; }
+.form-card label { font-weight: 600; margin-top: 0.5rem; }
+.form-card input, .form-card textarea, .form-card select {
+  padding: 0.65rem; border: 1px solid #cbd5e1; border-radius: 8px; width: 100%;
+}
+.success { color: #15803d; font-weight: 600; margin-top: 0.5rem; }
+.error { color: #b91c1c; font-weight: 600; margin-top: 0.5rem; }
+
+@media (max-width: 600px) {
+  .navbar { padding: 1rem; }
+  .grid { grid-template-columns: 1fr; }
+}
