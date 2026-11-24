@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Създай събитие — EventHub School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/glass.css" />
+</head>
+<body>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-dot"></span>
+        <span>EventHub</span>
+        <span class="logo-sub">School</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../index.html" data-i18n="nav_events">Събития</a>
+        <a href="add-event.html" class="active" data-i18n="nav_add">+ Създай събитие</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn" title="Night Mode" aria-label="Toggle theme">🌙</button>
+        <button id="lang-toggle" class="lang-btn">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <header class="page-header compact">
+      <div class="page-title-block">
+        <span class="eyebrow" data-i18n="add_eyebrow">Организатор</span>
+        <h1 data-i18n="add_title">Създай ново събитие</h1>
+      </div>
+    </header>
+
+    <div class="add-layout">
+      <form id="add-event-form" class="form-card">
+        <label>
+          <span data-i18n="label_title">Заглавие на събитието</span>
+          <input type="text" id="title" placeholder="напр. Работилница по уеб дизайн" required />
+        </label>
+
+        <label>
+          <span data-i18n="label_desc">Описание</span>
+          <textarea id="description" rows="3" placeholder="Кратко описание какво ще се случва..." required></textarea>
+        </label>
+
+        <div class="form-row-2">
+          <label>
+            <span data-i18n="label_date">Дата и час</span>
+            <input type="datetime-local" id="event_date" required />
+          </label>
+
+          <label>
+            <span data-i18n="label_category">Категория</span>
+            <select id="category">
+              <option value="Технологии" data-i18n="cat_tech">Технологии</option>
+              <option value="Култура" data-i18n="cat_culture">Култура</option>
+              <option value="Спорт" data-i18n="cat_sport">Спорт</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-row-2">
+          <label>
+            <span data-i18n="label_venue">Зала</span>
+            <select id="venue_id" required></select>
+          </label>
+
+          <label>
+            <span data-i18n="label_capacity">Макс. места</span>
+            <input type="number" id="max_capacity" value="20" min="1" max="200" required />
+          </label>
+        </div>
+
+        <button type="submit" class="btn-primary" data-i18n="btn_create">Публикувай събитието</button>
+      </form>
+
+      <aside class="preview-box">
+        <span class="preview-label" data-i18n="preview_heading">Преглед на живо</span>
+        <article class="card preview-card">
+          <div class="card-cover cover-tech" id="prev-cover">
+            <span class="badge badge-tech" id="prev-cat">
+              <span class="dot"></span> Технологии
+            </span>
+            <span class="status-tag status-open" data-i18n="status_open">Свободни места</span>
+          </div>
+
+          <div class="card-body">
+            <div class="card-time" id="prev-date">Избери дата и час</div>
+            <h3 id="prev-title">Заглавие на събитието</h3>
+            <p class="card-desc" id="prev-desc">Описанието ще се появи тук...</p>
+
+            <div class="card-footer">
+              <div class="venue-line">
+                <span class="pin">📍</span>
+                <span id="prev-venue">Стая 300 (300)</span>
+              </div>
+
+              <div class="capacity-wrap">
+                <div class="capacity-text">
+                  <span data-i18n="spots_label">Записани</span>
+                  <span id="prev-cap">0 / 20</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill fill-green" style="width: 0%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </aside>
+    </div>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <footer class="footer">
+    <p data-i18n="footer_text">EventHub School © 2026 • Максим & Кристиан (10. клас)</p>
+  </footer>
+
+  <script src="../js/app.js"></script>
+  <script src="../js/fx.js"></script>
+</body>
+</html>

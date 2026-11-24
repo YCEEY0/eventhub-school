@@ -1,0 +1,152 @@
+/* EventHub — Liquid Glass v2. Зарежда се СЛЕД style.css и го надгражда. */
+:root{
+  --bg:rgba(255,255,255,.35);--surface:rgba(255,255,255,.08);--surface-subtle:rgba(255,255,255,.3);
+  --text:#1f1d3d;--muted:#66638a;--border:rgba(255,255,255,.45);--border-strong:rgba(124,110,230,.4);
+  --primary:#7468e8;--primary-text:#fff;--accent-indigo:#6f63e6;
+  --radius-lg:22px;--radius-md:15px;--radius-sm:13px;
+  --c1:rgba(255,255,255,.28);--c2:rgba(255,255,255,.18);
+  --rim:rgba(255,255,255,.95);--rim2:rgba(255,255,255,.65);--glow:rgba(255,255,255,.22);--spot:rgba(255,255,255,.4);--strong:rgba(255,255,255,.62);
+  --shadow-card:0 10px 30px rgba(80,60,160,.12);--shadow-hover:0 18px 44px rgba(80,60,160,.2);
+}
+[data-theme="dark"]{
+  --bg:rgba(255,255,255,.06);--surface:rgba(255,255,255,.035);--surface-subtle:rgba(255,255,255,.09);
+  --text:#f1efff;--muted:#a9a6cc;--border:rgba(255,255,255,.14);--border-strong:rgba(167,139,250,.5);
+  --primary:#8479f2;--primary-text:#fff;
+  --c1:rgba(255,255,255,.1);--c2:rgba(255,255,255,.07);
+  --rim:rgba(255,255,255,.55);--rim2:rgba(255,255,255,.28);--glow:rgba(255,255,255,.05);--spot:rgba(255,255,255,.12);--strong:rgba(34,30,66,.65);
+  --shadow-card:0 10px 30px rgba(0,0,0,.35);--shadow-hover:0 18px 44px rgba(0,0,0,.5);
+}
+
+/* ---------- Мек многослоен градиент ---------- */
+body{
+  background:
+    radial-gradient(50% 40% at 5% 5%,rgba(255,200,230,.5),transparent 70%),
+    radial-gradient(45% 40% at 95% 5%,rgba(196,181,253,.45),transparent 70%),
+    radial-gradient(50% 45% at 90% 95%,rgba(165,180,252,.4),transparent 70%),
+    radial-gradient(45% 40% at 8% 92%,rgba(165,232,255,.4),transparent 70%),
+    linear-gradient(160deg,#fbf8fd,#f2f4ff 55%,#f8f4ff);
+  background-attachment:fixed;
+}
+[data-theme="dark"] body{
+  background:
+    radial-gradient(50% 40% at 5% 5%,rgba(150,70,150,.26),transparent 70%),
+    radial-gradient(45% 40% at 95% 5%,rgba(80,70,190,.28),transparent 70%),
+    radial-gradient(50% 45% at 90% 95%,rgba(50,95,180,.22),transparent 70%),
+    radial-gradient(45% 40% at 8% 92%,rgba(40,120,140,.2),transparent 70%),#12101f;
+  background-attachment:fixed;
+}
+[data-theme] .ambient-glow{inset:0;top:0;left:0;width:auto;height:auto;transform:none;background:none;overflow:hidden}
+.ambient-glow::before,.ambient-glow::after{content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.32;animation:drift 22s ease-in-out infinite alternate}
+[data-theme="dark"] .ambient-glow::before,[data-theme="dark"] .ambient-glow::after{opacity:.2}
+.ambient-glow::before{width:440px;height:440px;left:26%;top:6%;background:conic-gradient(#ff9ad5,#a78bfa,#60a5fa,#ff9ad5)}
+.ambient-glow::after{width:400px;height:400px;right:8%;bottom:4%;background:conic-gradient(from 90deg,#67e8f9,#818cf8,#f0abfc,#67e8f9);animation-duration:28s;animation-direction:alternate-reverse}
+@keyframes drift{to{transform:translate(80px,50px) rotate(100deg) scale(1.12)}}
+
+/* ---------- Liquid glass: прозрачно, личат само отраженията ---------- */
+.navbar,[data-theme] .navbar,.metric-item,.card,.form-card,.modal,.dash-donut,.pill,.icon-btn,.lang-btn,#sort-select,.search-box input{
+  background:linear-gradient(135deg,var(--c1) 0%,var(--surface) 38%,var(--surface) 62%,var(--c2) 100%);
+  -webkit-backdrop-filter:blur(3px) saturate(1.7);backdrop-filter:blur(3px) saturate(1.7);
+  border:1px solid var(--border);
+  box-shadow:inset 1.5px 1.5px 1px -.5px var(--rim),inset -1.5px -1.5px 1px -.5px var(--rim2),inset 0 0 22px var(--glow),var(--shadow-card);
+}
+@supports (backdrop-filter:url(#lg)){
+  .navbar,[data-theme] .navbar,.metric-item,.card,.form-card,.dash-donut{backdrop-filter:url(#lg) blur(2px) saturate(1.7)}
+}
+.pill,.icon-btn,.lang-btn,#sort-select,.search-box input{box-shadow:inset 1px 1px 1px -.5px var(--rim),inset -1px -1px 1px -.5px var(--rim2),0 4px 12px rgba(80,60,160,.1)}
+.card,.metric-item,.form-card,.dash-donut,button{position:relative}
+.card,.metric-item{background:linear-gradient(150deg,var(--tint,transparent),transparent 55%),linear-gradient(135deg,var(--c1) 0%,var(--surface) 38%,var(--surface) 62%,var(--c2) 100%)}
+.card:has(.cover-tech){--tint:rgba(129,140,248,.22)}
+.card:has(.cover-culture){--tint:rgba(244,114,182,.2)}
+.card:has(.cover-sport){--tint:rgba(45,212,191,.2)}
+.metric-item:nth-child(1){--tint:rgba(129,140,248,.24)}
+.metric-item:nth-child(3){--tint:rgba(244,114,182,.2)}
+.metric-item:nth-child(5){--tint:rgba(45,212,191,.2)}
+.metric-item:nth-child(7){--tint:rgba(251,191,36,.2)}
+.card::after,.metric-item::after,.form-card::after,.dash-donut::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(220px circle at var(--mx,50%) var(--my,0),var(--spot),transparent 65%)}
+.card:hover::after,.metric-item:hover::after,.form-card:hover::after,.dash-donut:hover::after{opacity:1}
+.card-cover{background:none;border:0;padding:1.1rem 1.4rem .2rem}
+.card:hover{transform:translateY(-4px)}
+
+/* ---------- Горна лента: EventHub · Събития · Създай събитие · бутони ---------- */
+.navbar{top:12px;margin:12px auto 0;width:min(1180px,100% - 2rem);border-radius:999px}
+.nav-inner{max-width:none;padding:.55rem .75rem .55rem 1.25rem;gap:1rem}
+.logo-dot{width:26px;height:26px;border-radius:9px;background:conic-gradient(from 200deg,#ff9ad5,#9a7cf0,#5cc8f5,#ff9ad5)}
+.nav-links{margin-right:auto;margin-left:1.25rem}
+.nav-links a{padding:.5rem 1.05rem}
+.nav-links a.active{background:var(--surface-subtle);color:var(--text);box-shadow:inset 1px 1px 1px -.5px var(--rim),inset -1px -1px 1px -.5px var(--rim2)}
+.nav-links a.nav-cta,.nav-links a.nav-cta:hover{background:linear-gradient(135deg,#7c83f5,#9a7cf0 55%,#e879b9);color:#fff;box-shadow:inset 0 1px 1px rgba(255,255,255,.6),0 6px 18px rgba(124,108,240,.35)}
+
+/* ---------- Размери и разстояния ---------- */
+.container{width:min(1180px,100% - 2rem);max-width:none;margin:0 auto 3rem;padding:1.75rem 0 0}
+.page-header{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:1.25rem 1.5rem;align-items:stretch;margin-bottom:1.5rem}
+.page-title-block{grid-column:1/-1}
+.page-title-block h1{font-size:clamp(1.6rem,2.6vw,2.1rem);background:linear-gradient(110deg,#1f1d3d 15%,#6f63e6 60%,#d86fb0);-webkit-background-clip:text;background-clip:text;color:transparent}
+[data-theme="dark"] .page-title-block h1{background:linear-gradient(110deg,#fff 15%,#b9aef5 60%,#f0a6d4);-webkit-background-clip:text;background-clip:text}
+.page-title-block p{max-width:560px}
+.eyebrow,.preview-label,.modal-kicker{text-transform:none;letter-spacing:0}
+.metrics-strip{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;padding:0;background:none;border:0;box-shadow:none}
+.metric-divider{display:none}
+.metric-item{padding:1rem 1.25rem;border-radius:var(--radius-lg);justify-content:center}
+.metric-value{font-size:1.7rem}
+.dash-donut{display:flex;align-items:center;gap:1.25rem;padding:1rem 1.4rem;border-radius:var(--radius-lg)}
+.donut-wrap{position:relative;width:108px;height:108px;flex:none}
+.donut{width:100%;height:100%;border-radius:50%;-webkit-mask:radial-gradient(farthest-side,transparent 63%,#000 64%);mask:radial-gradient(farthest-side,transparent 63%,#000 64%)}
+.donut-wrap>b{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font-size:1.5rem;line-height:1.1}
+.donut-wrap small{font-size:.7rem;font-weight:500;color:var(--muted)}
+.dash-donut h2{font-size:.95rem;margin-bottom:.5rem}
+.dash-donut ul{list-style:none;display:grid;gap:.35rem;font-size:.84rem;color:var(--muted)}
+.dash-donut li{display:flex;align-items:center;gap:.5rem}
+.dash-donut li i{width:9px;height:9px;border-radius:50%}
+.dash-donut li b{margin-left:auto;padding-left:1.25rem;color:var(--text)}
+.toolbar{margin-bottom:1.5rem}
+.events-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.card-body{padding:.9rem 1.4rem 1.4rem;gap:.55rem}
+.add-layout{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:1.5rem}
+.form-card{padding:1.5rem;gap:1rem}
+.preview-box{top:6rem}
+.footer{border-top:0;margin-top:1rem;padding:1.25rem}
+.pill.active{background:linear-gradient(135deg,#7c83f5,#9a7cf0);color:#fff;border-color:transparent;box-shadow:0 6px 16px rgba(124,108,240,.38)}
+.progress-bar{height:6px;background:rgba(255,255,255,.35)}
+.fill-green{background:linear-gradient(90deg,#34d399,#22d3ee)}
+.fill-amber{background:linear-gradient(90deg,#fbbf24,#fb923c)}
+.fill-red{background:linear-gradient(90deg,#fb7185,#e11d48)}
+.form-card input:focus,.form-card select:focus,.form-card textarea:focus,.modal-form input:focus,.search-box input:focus{box-shadow:0 0 0 4px rgba(124,108,240,.2)}
+
+/* ---------- Бутони и ефекти при натискане ---------- */
+button,.nav-cta{overflow:hidden;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .25s,background-position .5s,border-color .2s}
+.nav-cta{position:relative}
+.btn-primary,.btn-secondary{border-radius:14px}
+.btn-primary{background:linear-gradient(135deg,#7c83f5,#9a7cf0 50%,#e879b9) 0 0/200% 100%;box-shadow:inset 0 1px 1px rgba(255,255,255,.55),0 8px 20px rgba(124,108,240,.35)}
+.btn-waitlist{background:linear-gradient(135deg,#f5a623,#f2788f) 0 0/200% 100%}
+.btn-primary:hover{opacity:1;background-position:100% 0;transform:translateY(-2px);box-shadow:inset 0 1px 1px rgba(255,255,255,.6),0 14px 28px rgba(124,108,240,.45)}
+.btn-primary::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.55) 50%,transparent 65%);transform:translateX(-120%);pointer-events:none}
+.btn-primary:hover::before{transform:translateX(120%);transition:transform .7s}
+.btn-primary:active,.btn-secondary:active,.pill:active,.icon-btn:active,.lang-btn:active,.close-btn:active{transform:scale(.92);transition-duration:.1s}
+.pill:hover,.icon-btn:hover,.lang-btn:hover{transform:translateY(-2px)}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.6);transform:scale(0);animation:rip .65s ease-out forwards;pointer-events:none}
+@keyframes rip{to{transform:scale(1);opacity:0}}
+
+/* ---------- Модал, toast ---------- */
+.modal-backdrop{background:rgba(90,70,170,.22);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+[data-theme="dark"] .modal-backdrop{background:rgba(4,2,18,.5)}
+.modal{background:var(--strong);border-radius:28px;max-width:440px}
+.modal-backdrop.open .modal{animation:pop .45s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{from{transform:scale(.88) translateY(14px);opacity:0}}
+.toast{border-radius:18px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.toast.success{background:linear-gradient(135deg,#10b981,#06b6d4)}
+.toast.warning{background:linear-gradient(135deg,#f59e0b,#fb7185)}
+
+:focus-visible{outline:2px solid #8b7cf6;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*,::before,::after{animation:none!important;transition-duration:.01ms!important}}
+@media (max-width:1000px){
+  .page-header{grid-template-columns:1fr}
+  .metrics-strip{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:700px){
+  .navbar{border-radius:26px}
+  .nav-inner{flex-wrap:wrap;padding:.6rem .8rem}
+  .nav-links{margin-left:0}
+  .logo-sub{display:none}
+  .metrics-strip{grid-template-columns:repeat(2,1fr)}
+  .dash-donut{flex-direction:column;align-items:flex-start}
+}

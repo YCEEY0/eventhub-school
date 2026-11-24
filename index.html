@@ -4,37 +4,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EventHub School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/glass.css" />
 </head>
 <body>
+  <div class="ambient-glow" aria-hidden="true"></div>
+
   <header class="navbar">
-    <strong class="logo" data-i18n="brand">EventHub School</strong>
-    <nav>
-      <a href="index.html" class="active" data-i18n="navHome">Събития</a>
-      <a href="pages/add-event.html" data-i18n="navAdd">Добави събитие</a>
-      <button id="languageToggle" type="button" class="lang-btn">EN</button>
-    </nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-dot"></span>
+        <span>EventHub</span>
+        <span class="logo-sub">School</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active" data-i18n="nav_events">Събития</a>
+        <a href="pages/add-event.html" class="nav-cta" data-i18n="nav_add">+ Създай събитие</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn" title="Night Mode" aria-label="Toggle theme">🌙</button>
+        <button id="lang-toggle" class="lang-btn">EN</button>
+      </div>
+    </div>
   </header>
 
   <main class="container">
-    <section class="hero">
-      <h1 data-i18n="heroTitle">Предстоящи училищни събития</h1>
-      <p data-i18n="heroSubtitle">Разгледай календара, филтрирай по категория и се запиши с един клик.</p>
+    <header class="page-header">
+      <div class="page-title-block">
+        <span class="eyebrow" data-i18n="eyebrow_term">Учебна 2026 / 2027</span>
+        <h1 data-i18n="hero_title">Предстоящи събития</h1>
+        <p data-i18n="hero_sub">Клубове, работилници и турнири в училище — запази място с един клик.</p>
+      </div>
+
+      <div class="metrics-strip">
+        <div class="metric-item">
+          <span class="metric-value" id="stat-events">0</span>
+          <span class="metric-label" data-i18n="stat_events">Събития</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-value" id="stat-regs">0</span>
+          <span class="metric-label" data-i18n="stat_regs">Записани</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-value" id="stat-spots">0</span>
+          <span class="metric-label" data-i18n="stat_spots">Свободни</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <span class="metric-value" id="stat-venues">11</span>
+          <span class="metric-label" data-i18n="stat_venues">Зали</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <div class="category-pills" id="category-pills">
+        <button class="pill active" data-cat="all" data-i18n="cat_all">Всички</button>
+        <button class="pill" data-cat="Технологии" data-i18n="cat_tech">Технологии</button>
+        <button class="pill" data-cat="Култура" data-i18n="cat_culture">Култура</button>
+        <button class="pill" data-cat="Спорт" data-i18n="cat_sport">Спорт</button>
+      </div>
+
+      <div class="search-row">
+        <div class="search-box">
+          <span class="search-icon">⌕</span>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Търси събитие..."
+            data-i18n-placeholder="search_placeholder"
+          />
+        </div>
+        <select id="sort-select" aria-label="Sort events">
+          <option value="date" data-i18n="sort_date">По дата</option>
+          <option value="spots" data-i18n="sort_spots">По свободни места</option>
+        </select>
+      </div>
     </section>
 
-    <section class="filters">
-      <input type="text" id="searchInput" data-i18n-placeholder="searchPlaceholder" placeholder="Търси събитие..." />
-      <select id="categoryFilter">
-        <option value="all" data-i18n="allCategories">Всички категории</option>
-        <option value="tech" data-i18n="catTech">Технологии</option>
-        <option value="culture" data-i18n="catCulture">Култура</option>
-        <option value="sport" data-i18n="catSport">Спорт</option>
-      </select>
-    </section>
-
-    <section id="eventsList" class="grid"></section>
+    <section class="events-grid" id="events-grid"></section>
   </main>
 
-  <script type="module" src="js/app.js"></script>
+  <!-- Модал за записване -->
+  <div class="modal-backdrop" id="reg-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <span class="modal-kicker" data-i18n="modal_kicker">Регистрация</span>
+          <h2 id="modal-event-name" class="modal-title-event">Събитие</h2>
+        </div>
+        <button type="button" id="close-modal" class="close-btn" aria-label="Close">&times;</button>
+      </div>
+
+      <form id="reg-form" class="modal-form">
+        <label>
+          <span data-i18n="label_student_name">Име и фамилия</span>
+          <input type="text" id="reg-name" placeholder="Иван Иванов" required />
+        </label>
+
+        <label>
+          <span data-i18n="label_student_class">Клас</span>
+          <input type="text" id="reg-class" placeholder="напр. 10А" data-i18n-placeholder="placeholder_class" required />
+        </label>
+
+        <div class="modal-actions">
+          <button type="button" id="cancel-modal" class="btn-secondary" data-i18n="btn_cancel">Отказ</button>
+          <button type="submit" class="btn-primary" data-i18n="btn_confirm">Потвърди място</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <footer class="footer">
+    <p data-i18n="footer_text">EventHub School © 2026 • Максим & Кристиан (10. клас)</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/fx.js"></script>
 </body>
 </html>
